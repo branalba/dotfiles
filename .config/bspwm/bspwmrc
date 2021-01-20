@@ -1,0 +1,43 @@
+#! /bin/sh
+
+sxhkd &
+
+# monitor init
+autorandr --change 
+xrandr --auto
+
+# wm config
+bspc config border_width         0
+bspc config window_gap          15
+bspc config top_padding		35
+
+bspc config split_ratio          0.52
+
+bspc config focus_follows_pointer true
+
+# get array of connected monitor IDs (some monitor names throw errors out of bspc)
+readarray -t monitors <<<"$(xrandr -q | grep " connected" | cut -d ' ' -f1)"
+readarray -t monitor_ids <<<"$(bspc query -M)" 
+
+# assign workspaces depending on number of attached monitors
+if [ "${#monitors[@]}" = "1" ]
+then 
+	bspc monitor ${monitor_ids[0]} -d 1 2 3 4 5 6 7 8 9 0
+else
+	bspc monitor ${monitor_ids[0]} -d 1 2 3 4 5
+	bspc monitor ${monitor_ids[1]} -d 6 7 8 9 0
+fi
+
+# rules
+bspc rule -a Zathura state=tiled
+bspc rule -a zoom:zoom:Chat state=floating
+
+# startup 
+~/.config/polybar/bspwm_launch.sh 
+feh --bg-fill ~/Nextcloud/Photos/forest3.jpg
+blueman-applet &
+nextcloud &
+picom --config ~/.config/picom/picom.conf -b &
+dunst &
+xset s off
+xset -dpms
