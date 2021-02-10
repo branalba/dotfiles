@@ -14,6 +14,8 @@ bspc config top_padding		35
 bspc config split_ratio          0.52
 
 bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
+bspc config remove_unplugged_monitors true
 
 # get array of connected monitor IDs (some monitor names throw errors out of bspc)
 readarray -t monitors <<<"$(xrandr -q | grep " connected" | cut -d ' ' -f1)"
@@ -30,7 +32,6 @@ fi
 
 # rules
 bspc rule -a Zathura state=tiled
-bspc rule -a zoom:zoom:Chat state=floating
 
 # startup 
 ~/.config/polybar/bspwm_launch.sh 
@@ -39,5 +40,6 @@ blueman-applet &
 nextcloud &
 picom --config ~/.config/picom/picom.conf -b &
 dunst &
+conky &
 xset s off
 xset -dpms

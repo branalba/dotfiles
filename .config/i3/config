@@ -206,13 +206,13 @@ gaps top 35
 # startup 
 exec --no-startup-id autorandr --change
 exec --no-startup-id xrandr --auto
-exec_always --no-startup-id feh --bg-fill ~/Nextcloud/Photos/forest2.jpg
+exec_always --no-startup-id feh --bg-fill ~/Nextcloud/Photos/forest3.jpg
 exec nextcloud
 exec spotify
 exec blueman-applet
-exec_always picom --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id dunst
+exec_always picom --config ~/.config/picom/picom.conf -b
 
 # disable screen blanking
 exec xset s off 

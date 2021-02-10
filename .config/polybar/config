@@ -45,8 +45,8 @@ font-2 = "Material Design Icons Desktop:style=Regular:pixelsize=20;4"
 
 tray-position = none
 
-wm-restack = i3
-;wm-restack = bspwm
+;wm-restack = i3
+wm-restack = bspwm
 enable-ipc = true
 override-redirect = true
 
@@ -263,7 +263,7 @@ click-left = playerctl play-pause
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 96
 
 format-full-background = ${colors.foreground}
 format-full-foreground = ${colors.background}
