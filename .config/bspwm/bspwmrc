@@ -14,7 +14,6 @@ bspc config top_padding		35
 bspc config split_ratio          0.52
 
 bspc config focus_follows_pointer true
-bspc config pointer_follows_focus true
 bspc config remove_unplugged_monitors true
 
 # get array of connected monitor IDs (some monitor names throw errors out of bspc)
@@ -37,9 +36,10 @@ bspc rule -a Zathura state=tiled
 ~/.config/polybar/bspwm_launch.sh 
 feh --bg-fill ~/Nextcloud/Photos/forest3.jpg
 blueman-applet &
-nextcloud &
 picom --config ~/.config/picom/picom.conf -b &
 dunst &
 conky &
+
+rmmod pcspkr
 xset s off
 xset -dpms

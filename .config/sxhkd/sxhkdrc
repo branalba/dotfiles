@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	konsole
+	urxvt
 
 # program launcher
 super + d
@@ -22,6 +22,14 @@ super + b
 super + z
 	zathura
 
+# launch calculator
+super + c
+	qalculate-gtk	
+	
+# launch ranger
+super + r
+	urxvt -e ranger
+
 # screenshot
 super + shift + s
 	gnome-screenshot --interactive
@@ -29,6 +37,7 @@ super + shift + s
 # lock screen
 super + shift + l
 	betterlockscreen -l blur
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
