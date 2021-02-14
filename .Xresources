@@ -1,0 +1,7 @@
+urxvt.scrollBar: 0
+URxvt.internalBorder: 20
+URxvt.background: #282828
+URxvt.foreground: #bdae93
+URxvt.font: xft:SourceCodePro\-Medium:size=11
+URxvt.letterspace: -4
+URxvt.secondaryWheel: 1
