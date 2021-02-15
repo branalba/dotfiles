@@ -13,6 +13,9 @@ super + d
 # network menu
 super + n
 	networkmanager_dmenu
+# music
+super + p
+	urxvt -e ncmpcpp
 
 # browser
 super + b
@@ -44,11 +47,11 @@ super + Escape
 
 # raise volume
 XF86AudioRaiseVolume 
-	pactl set-sink-volume @DEFAULT_SINK@ +10%  
+	pactl set-sink-volume @DEFAULT_SINK@ +5%  
 
 # lower volume
 XF86AudioLowerVolume 
-	pactl set-sink-volume @DEFAULT_SINK@ -10%  
+	pactl set-sink-volume @DEFAULT_SINK@ -5%  
 
 # mute volume
 XF86AudioMute 

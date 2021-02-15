@@ -39,7 +39,7 @@ blueman-applet &
 picom --config ~/.config/picom/picom.conf -b &
 dunst &
 conky &
-
+mopidy &
 rmmod pcspkr
 xset s off
 xset -dpms
