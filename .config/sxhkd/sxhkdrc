@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-	launcher_colorful
+	launcher
 
 # network menu
 super + n
