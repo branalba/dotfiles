@@ -14,22 +14,36 @@ Plugin 'frazrepo/vim-rainbow'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'yegappan/taglist'
 Plugin 'adelarsq/vim-matchit'
-Plugin 'morhetz/gruvbox'
 Plugin 'justinmk/vim-sneak'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
-" Plugin 'vim-syntastic/syntastic'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+" enable syntax highlighting
 syntax on
 
+" open NERDTree and taglist automatically
+autocmd VimEnter * NERDTree
+let Tlist_Auto_Open = 1
+let Tlist_Use_Right_Window   = 1
+
+" enable line numbers
 set number
+" enable rainbow brackets
 let g:rainbow_active = 1
 nnoremap <C-b> :make<CR>
 highlight CocFloating ctermbg=0
+
 " coc.nvim stuff
 " TextEdit might fail if hidden is not set.
 set hidden

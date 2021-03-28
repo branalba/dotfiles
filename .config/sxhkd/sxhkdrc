@@ -13,6 +13,7 @@ super + d
 # network menu
 super + n
 	networkmanager_dmenu
+
 # music
 super + p
 	urxvt -e ncmpcpp
@@ -35,11 +36,11 @@ super + r
 
 # screenshot
 super + shift + s
-	gnome-screenshot --interactive
+    maim -s -u | xclip -selection clipboard -t image/png -i
 
 # lock screen
-super + shift + l
-	betterlockscreen -l blur
+super + shift + p
+    powermenu
 
 # make sxhkd reload its configuration files:
 super + Escape
