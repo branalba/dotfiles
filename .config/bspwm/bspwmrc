@@ -25,18 +25,20 @@ readarray -t monitor_ids <<<"$(bspc query -M)"
 # assign workspaces depending on number of attached monitors
 if [ "${#monitors[@]}" = "1" ]
 then 
-	bspc monitor ${monitor_ids[0]} -d 1 2 3 4 5 6 7 8 9 0
+	bspc monitor ${monitor_ids[0]} -d code notes web talk cad mail 7 8 9 0
+    bspc rule -a STM32CubeIDE desktop='^1' follow=on
+    bspc rule -a Joplin desktop='^2' follow=on
+    bspc rule -a firefox desktop='^3' follow=on
+    bspc rule -a Slack desktop='^4' follow=on
+    bspc rule -a Kicad desktop='^5' follow=on 
+    bspc rule -a Evolution desktop='^6' follow=on
 else
-	bspc monitor ${monitor_ids[0]} -d 1 2 3 4 5
-	bspc monitor ${monitor_ids[1]} -d 6 7 8 9 0
+	bspc monitor ${monitor_ids[0]} -d code notes web talk cad  
+    bspc monitor ${monitor_ids[1]} -d mail 7 8 9 0
 fi
 
 # rules
 bspc rule -a Zathura state=tiled
-bspc rule -a firefox desktop='^3' follow=on
-bspc rule -a Joplin desktop='^2' follow=on
-bspc rule -a STM32CubeIDE desktop='^1' follow=on
-bspc rule -a Kicad desktop='^6' follow=on state=monocle
 
 # startup 
 feh --bg-fill ~/Nextcloud/Photos/winter_cabin.jpg
@@ -46,5 +48,6 @@ dunst &
 mopidy &
 blueman-applet &
 nextcloud &
+light-locker &
 xset s off
 xset -dpms
