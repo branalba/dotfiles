@@ -48,9 +48,10 @@ highlight CocFloating ctermbg=0
 " keybinds
 nnoremap <C-f> :NERDTreeToggle<CR> 
 nnoremap <C-l> :TlistToggle<CR>
-nnoremap <C-m> :make<CR>
+nnoremap <C-m> :!make<CR>
 nnoremap <C-d> :let g:termdebugger="gdb" <bar> Termdebug<CR>
 nnoremap <C-e> :let g:termdebugger="arm-none-eabi-gdb" <bar> Termdebug<CR>
+nnoremap <C-l> :!pdflatex *.tex<CR>
 
 " enable the termdebug plugin
 packadd termdebug

@@ -44,9 +44,9 @@ bspc rule -a Zathura state=tiled
 feh --bg-fill ~/Nextcloud/Photos/winter_cabin.jpg
 ~/.config/polybar/bspwm_fullbar_launch.sh
 picom --config ~/.config/picom/picom.conf -b &
+blueman-applet &
 dunst &
 mopidy &
-blueman-applet &
 nextcloud &
 light-locker &
 xset s off
