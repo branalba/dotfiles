@@ -30,6 +30,7 @@ then
     bspc rule -a Joplin desktop='^2' follow=on
     bspc rule -a firefox desktop='^3' follow=on
     bspc rule -a Slack desktop='^4' follow=on
+    bspc rule -a Discord desktop='^4' follow=on
     bspc rule -a Kicad desktop='^5' follow=on 
     bspc rule -a Evolution desktop='^6' follow=on
 else
@@ -40,6 +41,9 @@ fi
 # rules
 bspc rule -a Zathura state=tiled
 
+# this is needed for some Java applications (STM32CubeMX) to properly size
+wmname LG3D
+
 # startup 
 feh --bg-fill ~/Nextcloud/Photos/winter_cabin.jpg
 ~/.config/polybar/bspwm_fullbar_launch.sh
@@ -48,6 +52,6 @@ blueman-applet &
 dunst &
 mopidy &
 nextcloud &
-light-locker &
+light-locker --no-lock-on-lid --lock-on-suspend &
 xset s off
 xset -dpms

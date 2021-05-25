@@ -17,8 +17,13 @@ Plugin 'adelarsq/vim-matchit'
 Plugin 'justinmk/vim-sneak'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-airline/vim-airline'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'Chiel92/vim-autoformat'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -46,12 +51,12 @@ let g:rainbow_active = 1
 highlight CocFloating ctermbg=0
 
 " keybinds
-nnoremap <C-f> :NERDTreeToggle<CR> 
-nnoremap <C-l> :TlistToggle<CR>
-nnoremap <C-m> :!make<CR>
+nnoremap <C-f> :NERDTreeToggle<CR>
+nnoremap <C-t> :TlistToggle<CR>
+nnoremap <C-m> :w <bar> !make<CR>
 nnoremap <C-d> :let g:termdebugger="gdb" <bar> Termdebug<CR>
 nnoremap <C-e> :let g:termdebugger="arm-none-eabi-gdb" <bar> Termdebug<CR>
-nnoremap <C-l> :!pdflatex *.tex<CR>
+nnoremap <C-l> :w <bar> !pdflatex *.tex<CR>
 
 " enable the termdebug plugin
 packadd termdebug
@@ -60,3 +65,27 @@ let g:termdebug_popup=0
 let g:termdebug_wide=163
 set mouse=a
 
+" keep the cursor vertically centered
+" from https://vim.fandom.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
+augroup VCenterCursor
+    au!
+    au BufEnter,WinEnter,WinNew,VimResized *,*.*
+                \ let &scrolloff=winheight(win_getid())/2
+augroup END
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" set the virtual environment directory to the project working directory
+" https://github.com/jmcantrell/vim-virtualenv/issues/60
+let g:virtualenv_directory = $PWD
+let g:airline#extensions#virtualenv#enabled = 1
+let g:virtualenv_auto_activate = 1
+
+" Autoformat on file save
+" au BufWrite * :Autoformat
+
+let g:formatdef_my_custom_c = "'clang-format -style=''{SpacesInParentheses: true, AlignTrailingComments: true, SpaceBeforeParens: NonEmptyParentheses}'''"
+let g:formatters_c = ['my_custom_c']
+let g:autoformat_verbosemode=1
