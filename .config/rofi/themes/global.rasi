@@ -1,0 +1,6 @@
+@import "colorschemes/colors.rasi"
+
+* {
+  background-color: @background;
+  text-color: @foreground;
+}

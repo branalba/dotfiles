@@ -7,11 +7,9 @@ autorandr --change
 xrandr --auto
 
 # wm config
-bspc config border_width        1 
+bspc config border_width        0 
 bspc config window_gap          10
-bspc config top_padding		    30
-
-bspc config focused_border_color "#efcf9f"
+bspc config top_padding		    35
 
 bspc config split_ratio          0.52
 
@@ -45,8 +43,8 @@ bspc rule -a Zathura state=tiled
 wmname LG3D
 
 # startup 
-feh --bg-fill ~/Nextcloud/Photos/winter_cabin.jpg
-~/.config/polybar/bspwm_fullbar_launch.sh
+feh --bg-fill ~/Nextcloud/Photos/forest3.jpg
+~/.config/polybar/launch.sh
 picom --config ~/.config/picom/picom.conf -b &
 blueman-applet &
 dunst &

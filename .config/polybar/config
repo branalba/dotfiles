@@ -17,20 +17,20 @@
 ;==========================================================
 
 [colors]
-background = #EE0E0C0c
-background-alt1 = #4A3830
-background-alt2 = #664534
-foreground = #efcf9f
-foreground-alt = #735544
-alert = #F5962E
+background = #CC282828
+background-alt1 = #CC282828
+background-alt2 = #CC282828
+foreground = #ebdbb2
+foreground-alt = #a89984
+alert = #cc241d
 
 ;========================================================== 
 
-[bar/full]
+[bar/parent]
 monitor = ${env:MONITOR:}
 height = 30
-radius = 0
-offset-y = 0
+radius = 15 
+offset-y = 5
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -51,16 +51,36 @@ wm-restack = bspwm
 enable-ipc = true
 override-redirect = true
 
-scroll-up = bspwm.prev
-scroll-down = bspwm.next
-
 cursor-click = pointer
 cursor-scroll = default
 
-width = 100%
+modules-left =  
+modules-center =
+modules-right = 
+
+[bar/workspace]
+inherit = bar/parent
+width = 24.5%
+padding-left= 1
+offset-x = 0.5%
+scroll-up = bspwm.prev
+scroll-down = bspwm.next
 
 modules-left = launcher bspwm updates-pacman-aurhelper 
-modules-center = mpd
+
+[bar/music]
+inherit = bar/parent
+width = 20%
+offset-x = 40%
+padding-left = 1
+
+modules-left = mpd
+
+[bar/status]
+inherit = bar/parent
+width = 27.5%
+offset-x = 72%
+padding-right = 1
 modules-right = cpu temperature memory battery pulseaudio timer date
 
 ;==========================================================
@@ -213,7 +233,7 @@ format-online = <icon-prev><toggle><icon-next><label-song>
 label-song = %title% by %artist%
 label-song-maxlen = 35
 label-song-background = ${colors.background-alt2}
-label-song-padding = 2
+label-song-padding = 0
 format-offline = <label-offline>
 label-offline = mpd is offline 
 icon-pause = 󰏤

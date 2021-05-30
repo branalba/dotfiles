@@ -24,10 +24,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
+colorscheme gruvbox
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width

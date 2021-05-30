@@ -1,4 +1,1 @@
-/** Basic config file **/
-
-@import "~/.cache/wal/colors-rofi-dark.rasi"
-
+@import "~/.config/rofi/themes/global.rasi"

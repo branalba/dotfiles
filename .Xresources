@@ -1,45 +1,64 @@
 urxvt.scrollBar: 0
 URxvt.internalBorder: 20
-URxvt.background: #0E0C0C
-URxvt.foreground: #efcf9f
 URxvt.font: xft:SourceCodePro-Medium:size=11
 URxvt.letterspace: -4
 URxvt.secondaryWheel: 1
-! Colors 0-15.
-*.color0: #0E0C0C
-*color0:  #0E0C0C
-*.color1: #4A3830
-*color1:  #4A3830
-*.color2: #664534
-*color2:  #664534
-*.color3: #735544
-*color3:  #735544
-*.color4: #9E552B
-*color4:  #9E552B
-*.color5: #CA6126
-*color5:  #CA6126
-*.color6: #F5962E
-*color6:  #F5962E
-*.color7: #efcf9f
-*color7:  #efcf9f
-*.color8: #a7906f
-*color8:  #a7906f
-*.color9: #4A3830
-*color9:  #4A3830
-*.color10: #664534
-*color10:  #664534
-*.color11: #735544
-*color11:  #735544
-*.color12: #9E552B
-*color12:  #9E552B
-*.color13: #CA6126
-*color13:  #CA6126
-*.color14: #F5962E
-*color14:  #F5962E
-*.color15: #efcf9f
-*color15:  #efcf9f
 
-! Black color that will not be affected by bold highlighting.
-*.color66: #0E0C0C
-*color66:  #0E0C0C
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
 
+URxvt.color66:  #427b58
+URxvt.color88:  #9d0006
+URxvt.color96:  #8f3f71
+URxvt.color100: #79740e
+URxvt.color108: #8ec07c
+URxvt.color109: #83a598
+URxvt.color130: #af3a03
+URxvt.color136: #b57614
+URxvt.color142: #b8bb26
+URxvt.color167: #fb4934
+URxvt.color175: #d3869b
+URxvt.color208: #fe8019
+URxvt.color214: #fabd2f
+URxvt.color223: #ebdbb2
+URxvt.color228: #f2e5bc
+URxvt.color229: #fbf1c7
+URxvt.color230: #f9f5d7
+URxvt.color234: #1d2021
+URxvt.color235: #282828
+URxvt.color236: #32302f
+URxvt.color237: #3c3836
+URxvt.color239: #504945
+URxvt.color241: #665c54
+URxvt.color243: #7c6f64
+URxvt.color244: #928374
+URxvt.color245: #928374
+URxvt.color246: #a89984
+URxvt.color248: #bdae93
+URxvt.color250: #d5c4a1
